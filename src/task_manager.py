@@ -1,6 +1,6 @@
-from typing import Any
+from typing import Any, Iterable
 
-from src.api import TaskSourceProto
+from src.api import TaskSourceProto, TaskInitialData
 
 
 class InvalidTaskSourceError(Exception):
@@ -28,3 +28,10 @@ class TaskManager:
     def __assert_not_added(self, source: TaskSourceProto):
         if source.name in self.__sources.keys():
             raise KeyError(f"Source {source.name} already added")
+
+    def get_new_tasks(self) -> Iterable[TaskInitialData]:
+        """
+        Временный метод для тестирования
+        """
+        for source in self.__sources.values():
+            yield from source.fetch_new_tasks()
