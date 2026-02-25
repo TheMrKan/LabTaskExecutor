@@ -3,6 +3,7 @@ from pathlib import Path
 from src.task_manager import TaskManager
 from src.sources.file_source import FileTaskSource
 from src.sources.generator_source import GeneratorTaskSource
+from src.sources.api_source import APITaskSource
 
 
 def main():
@@ -13,6 +14,9 @@ def main():
 
     generator_task_source = GeneratorTaskSource()
     manager.add_source(generator_task_source)
+
+    api_task_source = APITaskSource("https://google.com/")
+    manager.add_source(api_task_source)
 
     print(list(manager.get_new_tasks()))
 
