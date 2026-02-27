@@ -33,5 +33,5 @@ class FileTaskSource:
                 next(f)
 
             for i, line in enumerate(f):
-                yield FileTask(f"line{i+self.__padding}", line)
+                yield FileTask(f"line{self.__padding}", line)
                 self.__padding += 1
