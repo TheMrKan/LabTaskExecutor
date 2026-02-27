@@ -8,6 +8,9 @@ APITask = namedtuple('APITask', ['task_id', 'payload'])
 
 
 class APITaskSource:
+    """
+    Источник задач из HTTP эндпоинта
+    """
     name: str
     __url: str
 

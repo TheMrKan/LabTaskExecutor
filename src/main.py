@@ -7,6 +7,9 @@ from src.sources.api_source import APITaskSource
 
 
 def main():
+    """
+    Ничего полезного. Добавляет источник каждого типа, в конце выводит новые задачи из них.
+    """
     manager = TaskManager()
 
     file_task_source = FileTaskSource(Path("main.py"))
